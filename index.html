@@ -269,7 +269,16 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        .section-titlewhite {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: #ffffff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .section-subtitle {
             font-size: 1.25rem;
             color: #6b7280;
@@ -843,8 +852,8 @@
                             <i data-lucide="user" style="color: white; width: 20px; height: 20px;"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>TechCorp Inc.</p>
+                            <h4>William</h4>
+                            <p>Author</p>
                         </div>
                     </div>
                 </div>
@@ -865,8 +874,8 @@
                             <i data-lucide="user" style="color: white; width: 20px; height: 20px;"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>RetailMax</p>
+                            <h4>Alan</h4>
+                            <p>Senior Engineer</p>
                         </div>
                     </div>
                 </div>
@@ -880,15 +889,15 @@
                         <i data-lucide="star" class="star" style="width: 20px; height: 20px; fill: currentColor;"></i>
                     </div>
                     <p class="testimonial-text">
-                        "Professional presentation and clear understanding of our requirements. Looking forward to seeing what they can build for us."
+                        "Professional presentation and clear understanding of our requirements. Looking forward to utilising them in the future"
                     </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i data-lucide="user" style="color: white; width: 20px; height: 20px;"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Emily Rodriguez</h4>
-                            <p>StartupHub</p>
+                            <h4>Jamie</h4>
+                            <p>Start Up Business Owner</p>
                         </div>
                     </div>
                 </div>
@@ -899,7 +908,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section section-blue">
         <div class="section">
-            <h2 class="section-title" style="color: white;">Ready to Get Started?</h2>
+            <h2 class="section-titlewhite" style="color: white;">Ready to Get Started?</h2>
             <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">
                 Let's discuss your chatbot project. Contact us for a free consultation and custom quote.
             </p>
@@ -909,11 +918,11 @@
                     <h3>Get in Touch</h3>
                     <div class="contact-item">
                         <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
-                        <span>contact@solarisai.com</span>
+                        <span>admin@solarisai.com</span>
                     </div>
                     <div class="contact-item">
                         <i data-lucide="user" style="width: 20px; height: 20px;"></i>
-                        <span>+1 (555) 123-4567</span>
+                        <span>07737 841384</span>
                     </div>
                     
                     <div class="contact-features">
@@ -939,24 +948,22 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Start Your Project</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-form">Send Message</button>
-                    </form>
-                </div>
+                <form action="https://formsubmit.co/admin@solarisai.co.uk" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+    </div>
+    <button type="submit" class="btn-form">Send Message</button>
+</form>
             </div>
         </div>
     </section>
@@ -965,7 +972,7 @@
     <footer class="footer">
         <div class="footer-logo">
             <div class="footer-logo-icon">
-                <i data-lucide="bot" style="color: white; width: 16px; height: 16px;"></i>
+                <i data-lucide="bot" style="color: rgb(255, 255, 255); width: 16px; height: 16px;"></i>
             </div>
             <span style="font-size: 1.25rem; font-weight: 700;">Solaris AI</span>
         </div>

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVault - Premium Electronics Store</title>
+    <link rel="stylesheet" href="ecommerce-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>TechVault</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Premium Electronics
+                        <span class="gradient-text">Delivered</span>
+                    </h1>
+                    <p class="hero-description">
+                        Discover cutting-edge technology with unmatched quality. 
+                        From smartphones to smart homes, we've got everything you need.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToProducts()">Shop Now</button>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">⭐ 4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">🚚 Free</span>
+                            <span class="stat-label">Shipping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="product-showcase">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-laptop"></i>
+                            <span>Laptops</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Phones</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-headphones"></i>
+                            <span>Audio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $99</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>2-Year Warranty</h3>
+                    <p>Full protection guarantee</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Expert customer service</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>30-Day Returns</h3>
+                    <p>Hassle-free returns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Handpicked electronics that define innovation</p>
+            </div>
+            
+            <!-- Product Filters -->
+            <div class="product-filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Products</button>
+                    <button class="filter-btn" data-category="laptops">Laptops</button>
+                    <button class="filter-btn" data-category="phones">Phones</button>
+                    <button class="filter-btn" data-category="audio">Audio</button>
+                    <button class="filter-btn" data-category="tablets">Tablets</button>
+                    <button class="filter-btn" data-category="accessories">Accessories</button>
+                </div>
+                <div class="sort-dropdown">
+                    <select id="sortSelect">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Best Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by thousands of satisfied customers worldwide</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Exceptional quality and lightning-fast delivery. TechVault has become my go-to store for all electronics."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Outstanding customer service and genuine products. The warranty coverage gives me complete peace of mind."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best prices, authentic products, and incredible support. I've recommended TechVault to all my friends."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest deals, product launches, and tech news delivered to your inbox.</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="email-input" id="emailInput">
+                    <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>TechVault</span>
+                    </div>
+                    <p>Your trusted partner for premium electronics and cutting-edge technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 1-800-TECH-VAULT</p>
+                        <p><i class="fas fa-envelope"></i> support@techvault.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital City</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 TechVault. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                name: "MacBook Pro 16\"",
+                description: "M2 Pro chip, 16GB RAM, 512GB SSD",
+                price: 2399,
+                originalPrice: 2599,
+                category: "laptops",
+                rating: 5,
+                reviews: 128,
+                badge: "New",
+                image: "images/MACBOOK.jpg"
+            },
+            {
+                id: 2,
+                name: "iPhone 15 Pro",
+                description: "256GB, Titanium Blue",
+                price: 999,
+                originalPrice: 1199,
+                category: "phones",
+                rating: 5,
+                reviews: 256,
+                badge: "Sale",
+                image: "images/IPHONE.jpg"
+            },
+            {
+                id: 3,
+                name: "AirPods Pro",
+                description: "Active Noise Cancellation",
+                price: 249,
+                category: "audio",
+                rating: 4,
+                reviews: 89,
+                image: "images/AIRPODS.jpg"
+            },
+            {
+                id: 4,
+                name: "iPad Pro 12.9\"",
+                description: "M2 chip, 128GB, Wi-Fi",
+                price: 1099,
+                category: "tablets",
+                rating: 5,
+                reviews: 174,
+                image: "images/IPAD.jpg"
+            },
+            {
+                id: 5,
+                name: "Samsung Galaxy S24 Ultra",
+                description: "512GB, Titanium Gray",
+                price: 1199,
+                originalPrice: 1299,
+                category: "phones",
+                rating: 5,
+                reviews: 203,
+                badge: "Sale",
+                image: "images/SAMSUNG.jpg"
+            },
+            {
+                id: 6,
+                name: "Sony WH-1000XM5",
+                description: "Wireless Noise Canceling",
+                price: 399,
+                category: "audio",
+                rating: 5,
+                reviews: 145,
+                image: "images/SONY.jpg"
+            },
+            {
+                id: 7,
+                name: "Dell XPS 13",
+                description: "Intel i7, 16GB RAM, 512GB SSD",
+                price: 1299,
+                category: "laptops",
+                rating: 4,
+                reviews: 92,
+                image: "images/DELL.jpg"
+            },
+            {
+                id: 8,
+                name: "Apple Watch Series 9",
+                description: "45mm, GPS + Cellular",
+                price: 499,
+                category: "accessories",
+                rating: 5,
+                reviews: 167,
+                badge: "New",
+                image: "images/APPLEWATCH.jpg"
+            },
+            {
+                id: 9,
+                name: "Google Pixel 8 Pro",
+                description: "256GB, Obsidian",
+                price: 899,
+                category: "phones",
+                rating: 4,
+                reviews: 134,
+                image: "images/GOOGLE.jpg"
+            },
+            {
+                id: 10,
+                name: "Microsoft Surface Pro 9",
+                description: "Intel i7, 16GB RAM, 256GB SSD",
+                price: 1399,
+                category: "tablets",
+                rating: 4,
+                reviews: 78,
+                image: "images/MICROSOFT.jpg"
+            },
+            {
+                id: 11,
+                name: "Bose QuietComfort 45",
+                description: "Wireless Noise Canceling",
+                price: 329,
+                category: "audio",
+                rating: 4,
+                reviews: 211,
+                image: "images/BOSE.jpg"
+            },
+            {
+                id: 12,
+                name: "Magic Keyboard",
+                description: "For iPad Pro 12.9\"",
+                price: 349,
+                category: "accessories",
+                rating: 4,
+                reviews: 45,
+                image: "images/KEYBOARD.jpg"
+            }
+        ];
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(products);
+            updateCartUI();
+            initializeEventListeners();
+        });
+
+        function initializeEventListeners() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', handleSearch);
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', handleCategoryFilter);
+            });
+            
+            // Sort dropdown
+            document.getElementById('sortSelect').addEventListener('change', handleSort);
+            
+            // Cart functionality
+            document.getElementById('cartBtn').addEventListener('click', toggleCart);
+            document.getElementById('cartClose').addEventListener('click', toggleCart);
+            
+            // Modal functionality
+            document.getElementById('modalClose').addEventListener('click', closeModal);
+            document.getElementById('modalOverlay').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            
+            // Newsletter subscription
+            document.getElementById('subscribeBtn').addEventListener('click', handleSubscription);
+        }
+
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        ${product.badge ? `<div class="product-badge ${product.badge.toLowerCase()}">${product.badge}</div>` : ''}
+                        <div class="product-placeholder">
+                            <img src="${product.image}" alt="${product.name}" style="width:100%;height:150px;object-fit:contain;">
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(${product.id})">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                ${generateStars(product.rating)}
+                            </div>
+                            <span>(${product.reviews} reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$${product.price.toLocaleString()}</span>
+                            ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toLocaleString()}</span>` : ''}
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+                    </div>
+                `;
+                grid.appendChild(productCard);
+            });
+        }
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<i class="fa${i <= rating ? 's' : 'r'} fa-star"></i>`;
+            }
+            return stars;
+        }
+
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = products.filter(product => 
+                product.name.toLowerCase().includes(query) || 
+                product.description.toLowerCase().includes(query)
+            );
+            renderProducts(filtered);
+        }
+
+        function handleCategoryFilter(e) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            const category = e.target.dataset.category;
+            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+            renderProducts(filtered);
+        }
+
+        function handleSort(e) {
+            const sortBy = e.target.value;
+            let sorted = [...products];
+            
+            switch(sortBy) {
+                case 'price-low':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    sorted.sort((a, b) => b.rating - a.rating);
+                    break;
+                default:
+                    sorted.sort((a, b) => a.name.localeCompare(b.name));
+            }
+            
+            renderProducts(sorted);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        function updateCartUI() {
+            const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+                cartTotal.textContent = '0.00';
+                return;
+            }
+            
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price}</p>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        <button onclick="removeFromCart(${item.id})" class="remove-btn">×</button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function updateQuantity(productId, newQuantity) {
+            if (newQuantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+            
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity = newQuantity;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const modal = document.getElementById('modalOverlay');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <div class="modal-product">
+                    <div class="modal-product-image">
+                        <i class="${product.icon}"></i>
+                    </div>
+                    <div class="modal-product-info">
+                        <h2>${product.name}</h2>
+                        <p class="modal-description">${product.description}</p>
+                        <div class="modal-rating">
+                            <div class="stars">${generateStars(product.rating)}</div>
+                            <span>(${product.reviews} reviews)</span>
+                        </div>
+                        <div class="modal-price">
+                            <span class="current-price">$${product.price.toLocaleString()}</span>
+                            ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toLocaleString()}</span>` : ''}
+                        </div>
+                        <button class="add-to-cart-btn modal-add-btn" onclick="addToCart(${product.id}); closeModal();">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function handleSubscription() {
+            const email = document.getElementById('emailInput').value;
+            const btn = document.getElementById('subscribeBtn');
+            
+            if (email) {
+                btn.innerHTML = 'Subscribed!';
+                btn.style.backgroundColor = '#10b981';
+                document.getElementById('emailInput').value = '';
+                
+                setTimeout(() => {
+                    btn.innerHTML = 'Subscribe';
+                    btn.style.backgroundColor = '';
+                }, 3000);
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

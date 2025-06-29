@@ -1114,8 +1114,10 @@ body {
     }
     
     .search-input {
-        width: 180px;
-    }
+  width: 100%;
+  max-width: 200px;
+}
+
     
     .hero-content {
         grid-template-columns: 1fr;
@@ -1182,6 +1184,23 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.hero {
+  padding-top:120px; /* Matches your .header height */
+}
+
+.search-container {
+  margin-left: 16px;
+}
+
+
+
+@media (min-width: 769px) {
+  .hero {
+    padding-top: 0; /* Remove it again on desktop */
+  }
+}
+
 
 @media (max-width: 480px) {
     .container {

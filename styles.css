@@ -491,7 +491,9 @@
 .ecommerce-preview {
     background: linear-gradient(135deg, #10b981, #3b82f6);
 }
-
+.doggroomers-preview {
+    background: linear-gradient(135deg, #d3d01a, #e77d19);
+}
 
         /* Testimonials */
         .testimonial-card {
@@ -638,57 +640,90 @@
         .btn-form:hover {
             background: #f9fafb;
         }
-/* Social button area */
-.social-links {
-  display: flex;
-  justify-content: start;
+
+
+/* --- Footer (scoped) --- */
+.footer {
+  background: #1e3a8a;
+  color: #fff;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Only style the social buttons that live INSIDE the footer */
+.footer .social-links{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
   gap: var(--spacing-m);
   margin-top: var(--spacing-m);
 }
 
-.social-links a {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: linear-gradient(45deg, #25D366, #075E54);
-  color: white;
-  font-weight: 600;
+.footer .social-btn{
+  display:flex; align-items:center; justify-content:center;
+  height:56px;
+  padding:0 16px;
+  border-radius:12px;
+  font-weight:700;
+  color:#fff; text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.footer .social-btn:hover{ transform: translateY(-2px); filter:brightness(1.05); }
+
+.footer .social-btn.facebook  { background:#1877F2; }
+.footer .social-btn.instagram { background: linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4); }
+.footer .social-btn.tiktok    { background: linear-gradient(45deg,#000,#111); border:1px solid rgba(255,255,255,.12); }
+.footer .social-btn.whatsapp  { background: linear-gradient(45deg,#25D366,#075E54); }
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-l);
+  text-align: center;
+}
+
+.footer-column { text-align: center; }
+
+.footer-title { font-size: 24px; margin-bottom: var(--spacing-m); }
+
+.footer-column h4 { font-weight: 500; margin-bottom: var(--spacing-m); }
+
+.footer-column p { color: var(--soft-grey); margin-bottom: var(--spacing-s); }
+
+.footer-column ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-column li { margin-bottom: var(--spacing-s); text-align: center; }
+.footer-column a { color: var(--soft-grey); transition: var(--transition); }
+.footer-column a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: var(--spacing-m);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: var(--soft-grey);
+  font-size: 14px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.footer-bottom .dot { opacity: .45; }
+
+.credit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
   text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.social-links a:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-        /* Footer */
-        .footer {
-            background: #111827;
-            color: white;
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo-icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #2563eb, #9333ea);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-text {
-            color: #9ca3af;
-        }
+.credit img { height: 24px; width: auto; display: block; }
 
         /* Animations */
         @keyframes fade-in {
@@ -771,4 +806,6 @@
             .hero-title {
                 font-size: 2.5rem;
             }
+
+            .footer-top { grid-template-columns: 1fr; }
         }
